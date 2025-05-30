@@ -1,0 +1,674 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hướng Dẫn Xử Lý Đơn Hàng - Co.op Online</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="container">
+            <nav class="navbar">
+                <div class="nav-brand">
+                    <img src="images/logo.jpg" alt="Co.op Online" class="logo">
+                </div>
+                
+                <ul class="nav-menu">
+                    <li><a href="index.html" class="nav-link">Trang chủ</a></li>
+                    <li><a href="#about" class="nav-link">Giới thiệu</a></li>
+                    <li><a href="#guide" class="nav-link active">Hướng dẫn</a></li>
+                    <li><a href="#news" class="nav-link">Tin tức</a></li>
+                    <li><a href="#contact" class="nav-link">Liên hệ</a></li>
+                </ul>
+
+                <div class="nav-actions">
+                    <a href="#guide" class="btn btn-primary">Xem hướng dẫn</a>
+                    <button class="mobile-menu-toggle">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </button>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero-guide">
+        <div class="hero-bg"></div>
+        <div class="container">
+            <div class="hero-content">
+                <h1 class="hero-title">
+                    <span class="highlight">Hướng Dẫn</span><br>
+                    Xử Lý Đơn Hàng Co.op Online
+                </h1>
+                <p class="hero-description">
+                    Hệ thống hướng dẫn toàn diện giúp nhân viên xử lý đơn hàng một cách chuyên nghiệp, chính xác và hiệu quả
+                </p>
+                <div class="hero-actions">
+                    <a href="#guide" class="btn btn-primary btn-large">Bắt đầu ngay</a>
+                    <a href="index.html" class="btn btn-outline btn-large">Về trang chủ</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Main Content -->
+    <div class="main-wrapper">
+        <!-- Sidebar Navigation -->
+        <aside class="sidebar">
+            <div class="sidebar-content">
+                <h3>Mục lục</h3>
+                
+                <!-- Search Container -->
+                <div class="search-container">
+                    <input type="text" id="searchInput" placeholder="Tìm kiếm nội dung..." class="search-input">
+                    <button id="clearSearch" class="clear-search" title="Xóa tìm kiếm">×</button>
+                </div>
+                <div id="searchResults" class="search-results"></div>
+                
+                <ul class="nav-list">
+                    <li><a href="#phan-1">Phần 1: Xử Lý Đơn Hàng Thành Công</a>
+                        <ul>
+                            <li><a href="#nhan-don-hang">Nhận và Xử Lý Đơn Hàng</a></li>
+                            <li><a href="#soan-hang">Soạn Hàng</a></li>
+                            <li><a href="#giao-hang">Giao Hàng</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="#phan-2">Phần 2: Xử Lý Lỗi và Sự Cố</a>
+                        <ul>
+                            <li><a href="#loi-he-thong">Lỗi Hệ Thống</a></li>
+                            <li><a href="#loi-thanh-toan">Lỗi Thanh Toán</a></li>
+                            <li><a href="#loi-giao-hang">Lỗi Giao Hàng</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="#phan-3">Phần 3: Hủy Đơn Hàng</a>
+                        <ul>
+                            <li><a href="#huy-don-khach-hang">Khách Hàng Hủy Đơn</a></li>
+                            <li><a href="#huy-don-thieu-hang">Thiếu Hàng</a></li>
+                            <li><a href="#huy-don-da-soan">Đã Soạn Hàng</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="#phan-4">Phần 4: Ứng Dụng Pick Hàng</a>
+                        <ul>
+                            <li><a href="#cai-dat-app">Cài Đặt Ứng Dụng</a></li>
+                            <li><a href="#su-dung-app">Sử Dụng Ứng Dụng</a></li>
+                            <li><a href="#loi-app">Xử Lý Lỗi App</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="#phan-5">Phần 5: Liên Hệ và Hỗ Trợ</a>
+                        <ul>
+                            <li><a href="#thong-tin-lien-he">Thông Tin Liên Hệ</a></li>
+                            <li><a href="#kenh-ho-tro">Các Kênh Hỗ Trợ</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </aside>
+
+        <!-- Main Content -->
+        <main id="guide" class="main-content">
+            <!-- Introduction -->
+            <div class="intro-box">
+                <h2>Chào mừng đến với hệ thống hướng dẫn Co.op Online</h2>
+                <p>Tài liệu này cung cấp hướng dẫn chi tiết về quy trình xử lý đơn hàng trên hệ thống Co.op Online. Vui lòng đọc kỹ và làm theo từng bước để đảm bảo hiệu quả công việc.</p>
+                <p><strong>Thời gian cập nhật:</strong> Tháng 12/2024</p>
+            </div>
+
+            <!-- Phần 1: Xử Lý Đơn Hàng Thành Công -->
+            <section id="phan-1" class="section">
+                <h2>Phần 1: Xử Lý Đơn Hàng Thành Công</h2>
+                
+                <section id="nhan-don-hang" class="subsection">
+                    <h3>1.1 Nhận và Xử Lý Đơn Hàng</h3>
+                    
+                    <div class="time-requirement">
+                        <h4>Thời Gian Yêu Cầu</h4>
+                        <div class="time-breakdown">
+                            <div class="time-item">
+                                <span class="time-label">Chỉ định nhân viên lấy hàng</span>
+                                <span class="time-value">30 phút</span>
+                            </div>
+                            <div class="time-item">
+                                <span class="time-label">Tiếp nhận đơn soạn</span>
+                                <span class="time-value">30 phút</span>
+                            </div>
+                            <div class="time-item">
+                                <span class="time-label">Soạn hàng và đóng gói</span>
+                                <span class="time-value">2 tiếng</span>
+                            </div>
+                            <div class="time-item">
+                                <span class="time-label">Giao hàng</span>
+                                <span class="time-value">2 tiếng</span>
+                            </div>
+                            <div class="time-item total">
+                                <span class="time-label">Tổng thời gian tối thiểu</span>
+                                <span class="time-value">5 tiếng</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="steps">
+                        <div class="step">
+                            <div class="step-number">1</div>
+                            <div class="step-content">
+                                <h4>Nhận đơn hàng từ hệ thống</h4>
+                                <p>Khi có đơn hàng mới, hệ thống sẽ tự động thông báo đến nhân viên điều phối.</p>
+                                <ul>
+                                    <li>Kiểm tra thông tin đơn hàng</li>
+                                    <li>Xác nhận địa chỉ giao hàng</li>
+                                    <li>Kiểm tra phương thức thanh toán</li>
+                                </ul>
+                            </div>
+                        </div>
+
+                        <div class="step">
+                            <div class="step-number">2</div>
+                            <div class="step-content">
+                                <h4>Chỉ định nhân viên soạn hàng</h4>
+                                <p>Trong vòng 30 phút đầu tiên, nhân viên điều phối sẽ chỉ định nhân viên phụ trách lấy hàng.</p>
+                                <div class="note-box info">
+                                    <h5>Lưu ý quan trọng</h5>
+                                    <p>Việc chỉ định phải được thực hiện trong vòng 30 phút để đảm bảo đúng cam kết thời gian với khách hàng.</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="step">
+                            <div class="step-number">3</div>
+                            <div class="step-content">
+                                <h4>Nhân viên tiếp nhận đơn hàng</h4>
+                                <p>Nhân viên soạn hàng kiểm tra đơn hàng được gán trong vòng 30 phút thông qua ứng dụng Pick hàng.</p>
+                                <ul>
+                                    <li>Mở ứng dụng Pick hàng</li>
+                                    <li>Kiểm tra danh sách đơn hàng được gán</li>
+                                    <li>Xác nhận tiếp nhận đơn hàng</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <section id="soan-hang" class="subsection">
+                    <h3>1.2 Quy Trình Soạn Hàng</h3>
+                    
+                    <div class="steps">
+                        <div class="step">
+                            <div class="step-number">1</div>
+                            <div class="step-content">
+                                <h4>Chuẩn bị soạn hàng</h4>
+                                <p>Kiểm tra danh sách sản phẩm và chuẩn bị dụng cụ cần thiết.</p>
+                                <ul>
+                                    <li>Xe đẩy hoặc giỏ hàng</li>
+                                    <li>Túi đựng hàng</li>
+                                    <li>Thiết bị quét mã vạch</li>
+                                    <li>Danh sách sản phẩm in ra</li>
+                                </ul>
+                            </div>
+                        </div>
+
+                        <div class="step">
+                            <div class="step-number">2</div>
+                            <div class="step-content">
+                                <h4>Lấy hàng theo danh sách</h4>
+                                <p>Di chuyển theo tuyến đường tối ưu để lấy hàng hiệu quả.</p>
+                                <div class="note-box warning">
+                                    <h5>Chú ý khi lấy hàng</h5>
+                                    <ul>
+                                        <li>Kiểm tra hạn sử dụng của sản phẩm</li>
+                                        <li>Chọn sản phẩm có chất lượng tốt nhất</li>
+                                        <li>Đối với hàng tươi sống, chọn sản phẩm tươi ngon</li>
+                                        <li>Quét mã vạch để xác nhận sản phẩm</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="step">
+                            <div class="step-number">3</div>
+                            <div class="step-content">
+                                <h4>Xử lý sản phẩm thiếu hàng</h4>
+                                <p>Khi gặp sản phẩm hết hàng hoặc không đủ số lượng:</p>
+                                <div class="method-options">
+                                    <div class="method">
+                                        <h5>Phương án 1: Tìm sản phẩm thay thế</h5>
+                                        <p>Liên hệ khách hàng để đề xuất sản phẩm tương tự có cùng công dụng và mức giá phù hợp.</p>
+                                    </div>
+                                    <div class="method">
+                                        <h5>Phương án 2: Hủy sản phẩm</h5>
+                                        <p>Nếu khách hàng không đồng ý thay thế, tiến hành hủy sản phẩm khỏi đơn hàng.</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="step">
+                            <div class="step-number">4</div>
+                            <div class="step-content">
+                                <h4>Đóng gói và hoàn tất</h4>
+                                <p>Sau khi lấy đủ hàng, tiến hành đóng gói cẩn thận.</p>
+                                <ul>
+                                    <li>Phân loại hàng theo nhóm (tươi sống, khô, đông lạnh)</li>
+                                    <li>Đóng gói riêng biệt để tránh ảnh hưởng chất lượng</li>
+                                    <li>Dán nhãn thông tin đơn hàng</li>
+                                    <li>Bấm "Hoàn tất soạn hàng" trên ứng dụng</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <section id="giao-hang" class="subsection">
+                    <h3>1.3 Quy Trình Giao Hàng</h3>
+                    
+                    <div class="note-box info">
+                        <h4>Cơ chế xử lý giao hàng</h4>
+                        <p>Kể từ khi nhân viên tiến hành trích bill cho đơn hàng, hệ thống sẽ tự động đẩy đơn hàng về cho hệ thống giao hàng. Nhân viên điều phối giao hàng sẽ tiến hành gán shipper cho đơn hàng cần đi giao.</p>
+                    </div>
+
+                    <div class="status-list">
+                        <div class="status-item">
+                            <span class="status-label waiting">Chờ giao hàng</span>
+                            <span>Đơn hàng đã được trích bill và chờ shipper nhận</span>
+                        </div>
+                        <div class="status-item">
+                            <span class="status-label processing">Đang giao</span>
+                            <span>Shipper đã nhận đơn và đang trên đường giao hàng</span>
+                        </div>
+                        <div class="status-item">
+                            <span class="status-label completed">Giao thành công</span>
+                            <span>Đơn hàng đã được giao thành công đến khách hàng</span>
+                        </div>
+                        <div class="status-item">
+                            <span class="status-label cancelled">Giao thất bại</span>
+                            <span>Không thể giao hàng, cần xử lý theo quy trình</span>
+                        </div>
+                    </div>
+                </section>
+            </section>
+
+            <!-- Phần 2: Xử Lý Lỗi và Sự Cố -->
+            <section id="phan-2" class="section">
+                <h2>Phần 2: Xử Lý Lỗi và Sự Cố</h2>
+                
+                <section id="loi-he-thong" class="subsection">
+                    <h3>2.1 Lỗi Hệ Thống</h3>
+                    
+                    <div class="note-box danger">
+                        <h4>Các lỗi thường gặp</h4>
+                        <ul>
+                            <li>Mất kết nối internet</li>
+                            <li>Ứng dụng Pick hàng không hoạt động</li>
+                            <li>Lỗi đồng bộ dữ liệu</li>
+                            <li>Máy quét mã vạch không hoạt động</li>
+                        </ul>
+                    </div>
+
+                    <div class="steps">
+                        <div class="step">
+                            <div class="step-number">1</div>
+                            <div class="step-content">
+                                <h4>Kiểm tra kết nối</h4>
+                                <p>Đầu tiên, kiểm tra kết nối internet và WiFi của thiết bị.</p>
+                            </div>
+                        </div>
+
+                        <div class="step">
+                            <div class="step-number">2</div>
+                            <div class="step-content">
+                                <h4>Khởi động lại ứng dụng</h4>
+                                <p>Đóng hoàn toàn ứng dụng Pick hàng và mở lại.</p>
+                            </div>
+                        </div>
+
+                        <div class="step">
+                            <div class="step-number">3</div>
+                            <div class="step-content">
+                                <h4>Liên hệ hỗ trợ kỹ thuật</h4>
+                                <p>Nếu vấn đề vẫn tiếp tục, liên hệ ngay với bộ phận IT để được hỗ trợ.</p>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <section id="loi-thanh-toan" class="subsection">
+                    <h3>2.2 Lỗi Thanh Toán</h3>
+                    
+                    <div class="note-box warning">
+                        <h4>Xử lý hoàn tiền thanh toán online</h4>
+                        <p>Hệ thống sẽ tự động hoàn tiền cho khách hàng đối với hình thức thanh toán online. Thông thường tiền sẽ được hoàn về trong 3-5 ngày đối với tài khoản nội địa. Tuy nhiên, trường hợp đơn hàng đã trích bill bắt buộc phải hoàn tiền theo quy trình trả hàng offline hiện nay.</p>
+                    </div>
+                </section>
+
+                <section id="loi-giao-hang" class="subsection">
+                    <h3>2.3 Lỗi Giao Hàng</h3>
+                    
+                    <div class="steps">
+                        <div class="step">
+                            <div class="step-number">1</div>
+                            <div class="step-content">
+                                <h4>Khách hàng không có mặt</h4>
+                                <p>Liên hệ khách hàng qua số điện thoại để xác nhận thời gian giao hàng khác.</p>
+                            </div>
+                        </div>
+
+                        <div class="step">
+                            <div class="step-number">2</div>
+                            <div class="step-content">
+                                <h4>Địa chỉ không chính xác</h4>
+                                <p>Liên hệ khách hàng để xác nhận lại địa chỉ chính xác.</p>
+                            </div>
+                        </div>
+
+                        <div class="step">
+                            <div class="step-number">3</div>
+                            <div class="step-content">
+                                <h4>Khách hàng từ chối nhận hàng</h4>
+                                <p>Ghi nhận lý do và báo cáo lại cho bộ phận điều phối để xử lý.</p>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+            </section>
+
+            <!-- Phần 3: Hủy Đơn Hàng -->
+            <section id="phan-3" class="section">
+                <h2>Phần 3: Quy Trình Hủy Đơn Hàng</h2>
+                
+                <div class="cancel-scenarios">
+                    <div class="scenario">
+                        <h4>Trường hợp 1: Khách hàng gọi hủy đơn</h4>
+                        <p>Khi khách hàng chủ động liên hệ để hủy đơn hàng</p>
+                        <div class="case">
+                            <h5>Quy trình xử lý:</h5>
+                            <ul>
+                                <li>Nhân viên trên ban KDTT sẽ tiến hành thao tác hủy đơn bằng tài khoản Admin</li>
+                                <li>Hệ thống sẽ gửi thông báo xuống dưới đơn vị đơn hàng đã bị hủy</li>
+                                <li>Đơn hàng sẽ không thể thao tác được nữa</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="scenario">
+                        <h4>Trường hợp 2: Thiếu hàng trong lúc soạn, khách hàng yêu cầu hủy</h4>
+                        <p>Khi không đủ hàng và khách hàng không muốn thay thế</p>
+                        <div class="case">
+                            <h5>Quy trình xử lý:</h5>
+                            <ul>
+                                <li>Nhân viên thao tác hủy đơn trên ứng dụng Pick hàng</li>
+                                <li>Hệ thống sẽ tự động hủy đơn hàng này</li>
+                                <li>Không cần thông báo thêm cho ban KDTT</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="scenario">
+                        <h4>Trường hợp 3: Nhân viên đã bấm hoàn tất soạn hàng trên ứng dụng</h4>
+                        <p>Khi đơn hàng đã hoàn tất soạn nhưng cần hủy</p>
+                        <div class="case">
+                            <h5>Quy trình xử lý:</h5>
+                            <div class="note-box danger">
+                                <p><strong>LƯU Ý QUAN TRỌNG:</strong> Tuyệt đối không được trích bill cho đơn hàng này mà phải hủy giao dịch tại POS.</p>
+                            </div>
+                            <ul>
+                                <li>Hủy giao dịch tại POS trước tiên</li>
+                                <li>Gửi mail về cho ban KDTT để nhờ hủy đơn hàng trên tài khoản Admin</li>
+                                <li>Kèm cc Kế Toán hoặc Giám Đốc trong email</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Phần 4: Ứng Dụng Pick Hàng -->
+            <section id="phan-4" class="section">
+                <h2>Phần 4: Hướng Dẫn Sử Dụng Ứng Dụng Pick Hàng</h2>
+                
+                <section id="cai-dat-app" class="subsection">
+                    <h3>4.1 Cài Đặt Ứng Dụng</h3>
+                    
+                    <div class="steps">
+                        <div class="step">
+                            <div class="step-number">1</div>
+                            <div class="step-content">
+                                <h4>Tải ứng dụng</h4>
+                                <p>Liên hệ với bộ phận IT để được cung cấp file cài đặt ứng dụng Pick hàng.</p>
+                            </div>
+                        </div>
+
+                        <div class="step">
+                            <div class="step-number">2</div>
+                            <div class="step-content">
+                                <h4>Cài đặt trên thiết bị</h4>
+                                <p>Cài đặt ứng dụng trên tablet hoặc smartphone được cấp phát.</p>
+                            </div>
+                        </div>
+
+                        <div class="step">
+                            <div class="step-number">3</div>
+                            <div class="step-content">
+                                <h4>Đăng nhập tài khoản</h4>
+                                <p>Sử dụng tài khoản được cấp phát để đăng nhập vào ứng dụng.</p>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <section id="su-dung-app" class="subsection">
+                    <h3>4.2 Sử Dụng Ứng Dụng</h3>
+                    
+                    <div class="step-inline">
+                        <h4>Các chức năng chính:</h4>
+                        <ul>
+                            <li>Xem danh sách đơn hàng được gán</li>
+                            <li>Quét mã vạch sản phẩm</li>
+                            <li>Cập nhật trạng thái soạn hàng</li>
+                            <li>Báo cáo sản phẩm thiếu hàng</li>
+                            <li>Hoàn tất đơn hàng</li>
+                        </ul>
+                    </div>
+                </section>
+
+                <section id="loi-app" class="subsection">
+                    <h3>4.3 Xử Lý Lỗi Ứng Dụng</h3>
+                    
+                    <div class="note-box warning">
+                        <h4>Các lỗi thường gặp và cách xử lý</h4>
+                        <ul>
+                            <li><strong>Không đồng bộ được dữ liệu:</strong> Kiểm tra kết nối internet</li>
+                            <li><strong>Không quét được mã vạch:</strong> Làm sạch camera và kiểm tra ánh sáng</li>
+                            <li><strong>Ứng dụng bị treo:</strong> Khởi động lại ứng dụng</li>
+                            <li><strong>Không cập nhật được trạng thái:</strong> Liên hệ IT hỗ trợ</li>
+                        </ul>
+                    </div>
+                </section>
+            </section>
+
+            <!-- Phần 5: Liên Hệ và Hỗ Trợ -->
+            <section id="phan-5" class="section">
+                <h2>Phần 5: Liên Hệ và Hỗ Trợ</h2>
+                
+                <section id="thong-tin-lien-he" class="subsection">
+                    <h3>5.1 Thông Tin Liên Hệ</h3>
+                    
+                    <div class="contact-grid">
+                        <div class="contact-card">
+                            <h4>Hỗ trợ kỹ thuật</h4>
+                            <p><strong>Email:</strong> vinhnhsgc@gmail.com</p>
+                            <p><strong>Điện thoại:</strong> (+84) 0906-601-880</p>
+                            <p><strong>Thời gian:</strong> 8:00 - 17:00 (T2-T6)</p>
+                        </div>
+                        
+                        <div class="contact-card">
+                            <h4>Ban KDTT</h4>
+                            <p><strong>Email:</strong> nhvinh@saigonco-op.com.vn</p>
+                            <p><strong>Điện thoại:</strong> (+84) 028-xxxx-xxxx</p>
+                            <p><strong>Thời gian:</strong> 7:00 - 19:00 (Hàng ngày)</p>
+                        </div>
+                    </div>
+                </section>
+
+                <section id="kenh-ho-tro" class="subsection">
+                    <h3>5.2 Các Kênh Hỗ Trợ</h3>
+                    
+                    <div class="support-channels">
+                        <div class="channel">
+                            <h4>Hỗ trợ trực tuyến</h4>
+                            <p>Chat trực tiếp với đội ngũ hỗ trợ qua website</p>
+                        </div>
+                        
+                        <div class="channel">
+                            <h4>Hotline</h4>
+                            <p>Gọi điện trực tiếp để được hỗ trợ nhanh chóng</p>
+                        </div>
+                        
+                        <div class="channel">
+                            <h4>Email</h4>
+                            <p>Gửi email chi tiết về vấn đề cần hỗ trợ</p>
+                        </div>
+                        
+                        <div class="channel">
+                            <h4>Đào tạo tại chỗ</h4>
+                            <p>Yêu cầu đội ngũ kỹ thuật đến đào tạo trực tiếp</p>
+                        </div>
+                    </div>
+                </section>
+            </section>
+
+            <!-- FAQ Section -->
+            <section class="faq-section">
+                <h2>Câu Hỏi Thường Gặp</h2>
+                
+                <div class="faq-list">
+                    <div class="faq-item">
+                        <div class="faq-question">
+                            <h4>Làm sao để cập nhật nhân viên cho đơn vị mình?</h4>
+                            <span class="faq-icon">+</span>
+                        </div>
+                        <div class="faq-answer">
+                            <p>Các đơn vị nếu có nhu cầu cập nhật nhân viên thì sẽ tạo file excel thông tin nhân viên (SĐT,..) và chi tiết yêu cầu (Thêm, sửa, xóa) và gửi về mail nhvinh@saigonco-op.com.vn kèm cc Giám đốc đơn vị.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="faq-item">
+                        <div class="faq-question">
+                            <h4>Thời gian xử lý đơn hàng là bao lâu?</h4>
+                            <span class="faq-icon">+</span>
+                        </div>
+                        <div class="faq-answer">
+                            <p>Quy trình xử lý đơn hàng được thiết kế với thời gian tối thiểu là 5 tiếng, đảm bảo hiệu quả và đáp ứng đúng cam kết với khách hàng.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="faq-item">
+                        <div class="faq-question">
+                            <h4>Xử lý hoàn tiền thanh toán online như thế nào?</h4>
+                            <span class="faq-icon">+</span>
+                        </div>
+                        <div class="faq-answer">
+                            <p>Hệ thống sẽ tự động hoàn tiền cho khách hàng đối với hình thức thanh toán online. Thông thường tiền sẽ được hoàn về trong 3-5 ngày đối với tài khoản nội địa.</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </main>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <div class="footer-brand">
+                        <img src="/placeholder.svg?height=40&width=120" alt="Co.op Online" class="footer-logo">
+                        <p>Hệ thống hướng dẫn toàn diện giúp nhân viên xử lý đơn hàng một cách chuyên nghiệp và hiệu quả.</p>
+                        <div class="social-links">
+                            <a href="#" class="social-link">
+                                <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                                    <path d="M24 4.557c-.883.392-1.832.656-2.828.775 1.017-.609 1.798-1.574 2.165-2.724-.951.564-2.005.974-3.127 1.195-.897-.957-2.178-1.555-3.594-1.555-3.179 0-5.515 2.966-4.797 6.045-4.091-.205-7.719-2.165-10.148-5.144-1.29 2.213-.669 5.108 1.523 6.574-.806-.026-1.566-.247-2.229-.616-.054 2.281 1.581 4.415 3.949 4.89-.693.188-1.452.232-2.224.084.626 1.956 2.444 3.379 4.6 3.419-2.07 1.623-4.678 2.348-7.29 2.04 2.179 1.397 4.768 2.212 7.548 2.212 9.142 0 14.307-7.721 13.995-14.646.962-.695 1.797-1.562 2.457-2.549z"/>
+                                </svg>
+                            </a>
+                            <a href="#" class="social-link">
+                                <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                                    <path d="M22.46 6c-.77.35-1.6.58-2.46.69.88-.53 1.56-1.37 1.88-2.38-.83.5-1.75.85-2.72 1.05C18.37 4.5 17.26 4 16 4c-2.35 0-4.27 1.92-4.27 4.29 0 .34.04.67.11.98C8.28 9.09 5.11 7.38 3 4.79c-.37.63-.58 1.37-.58 2.15 0 1.49.75 2.81 1.91 3.56-.71 0-1.37-.2-1.95-.5v.03c0 2.08 1.48 3.82 3.44 4.21a4.22 4.22 0 0 1-1.93.07 4.28 4.28 0 0 0 4 2.98 8.521 8.521 0 0 1-5.33 1.84c-.34 0-.68-.02-1.02-.06C3.44 20.29 5.7 21 8.12 21 16 21 20.33 14.46 20.33 8.79c0-.19 0-.37-.01-.56.84-.6 1.56-1.36 2.14-2.23z"/>
+                                </svg>
+                            </a>
+                            <a href="#" class="social-link">
+                                <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                                    <path d="M23.953 4.57a10 10 0 01-2.825.775 4.958 4.958 0 002.163-2.723c-.951.555-2.005.959-3.127 1.184a4.92 4.92 0 00-8.384 4.482C7.69 8.095 4.067 6.13 1.64 3.162a4.822 4.822 0 00-.666 2.475c0 1.71.87 3.213 2.188 4.096a4.904 4.904 0 01-2.228-.616v.06a4.923 4.923 0 003.946 4.827 4.996 4.996 0 01-2.212.085 4.936 4.936 0 004.604 3.417 9.867 9.867 0 01-6.102 2.105c-.39 0-.779-.023-1.17-.067a13.995 13.995 0 007.557 2.209c9.053 0 13.998-7.496 13.998-13.985 0-.21 0-.42-.015-.63A9.935 9.935 0 0024 4.59z"/>
+                                </svg>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="footer-section">
+                    <h4>Danh mục</h4>
+                    <ul class="footer-links">
+                        <li><a href="homepage.html">Trang chủ</a></li>
+                        <li><a href="#about">Giới thiệu</a></li>
+                        <li><a href="#guide">Hướng dẫn</a></li>
+                        <li><a href="#news">Tin tức</a></li>
+                        <li><a href="#contact">Liên hệ</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-section">
+                    <h4>Hướng dẫn</h4>
+                    <ul class="footer-links">
+                        <li><a href="#phan-1">Xử lý đơn hàng</a></li>
+                        <li><a href="#phan-2">Xử lý lỗi</a></li>
+                        <li><a href="#phan-3">Hủy đơn hàng</a></li>
+                        <li><a href="#phan-4">Ứng dụng Pick hàng</a></li>
+                        <li><a href="#phan-5">Liên hệ hỗ trợ</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-section">
+                    <h4>Liên hệ</h4>
+                    <div class="contact-info">
+                        <div class="contact-item">
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/>
+                            </svg>
+                            <span>(+84) 0906-601-880</span>
+                        </div>
+                        <div class="contact-item">
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/>
+                                <polyline points="22,6 12,13 2,6"/>
+                            </svg>
+                            <span>vinhnhsgc@gmail.com</span>
+                        </div>
+                        <div class="contact-item">
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/>
+                                <circle cx="12" cy="10" r="3"/>
+                            </svg>
+                            <span>131 Điện Biên Phủ, P.2, Q.Bình Thạnh, TP.HCM</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2024 Thiết kế và lập trình bởi Nguyễn Hữu Vinh. Tất cả quyền được bảo lưu.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Back to Top Button -->
+    <button class="back-to-top" id="backToTop">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M18 15l-6-6-6 6"/>
+        </svg>
+    </button>
+
+    <script src="script.js"></script>
+</body>
+</html>

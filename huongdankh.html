@@ -1,0 +1,967 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hướng Dẫn Khách Hàng - Co.op Online</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        :root {
+            --primary-color: #FF6B00;
+            --secondary-color: #FF9D45;
+            --accent-color: #FFB74D;
+            --text-color: #333;
+            --light-bg: #f8f9fa;
+            --border-color: #dee2e6;
+            --box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: var(--text-color);
+            background-color: var(--light-bg);
+            padding-bottom: 30px;
+        }
+        
+        .container {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        /* Header & Navigation - Enhanced */
+        header {
+            background-color: #fff;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+        
+        .header-top {
+            background-color: var(--primary-color);
+            color: white;
+            padding: 15px 0;
+        }
+        
+        .header-top h1 {
+            text-align: center;
+            font-size: 24px;
+            margin: 0;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+        
+        .main-header {
+            padding: 20px 0;
+        }
+        
+        .main-header .container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .logo {
+            font-size: 28px;
+            font-weight: bold;
+            color: var(--primary-color);
+            text-decoration: none;
+        }
+        
+        .logo img {
+            height: 60px;
+        }
+        
+        nav ul {
+            display: flex;
+            list-style: none;
+            gap: 40px;
+        }
+        
+        nav ul li a {
+            text-decoration: none;
+            color: var(--text-color);
+            font-weight: 600;
+            font-size: 18px;
+            transition: color 0.3s;
+            position: relative;
+            text-transform: uppercase;
+        }
+        
+        nav ul li a:hover, 
+        nav ul li a.active {
+            color: var(--primary-color);
+        }
+        
+        nav ul li a.active::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 100%;
+            height: 3px;
+            background-color: var(--primary-color);
+        }
+        
+        .mobile-menu-btn {
+            display: none;
+            cursor: pointer;
+            font-size: 28px;
+            color: var(--primary-color);
+        }
+        
+        /* Mobile Menu */
+        .mobile-menu {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0,0,0,0.9);
+            z-index: 1001;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            opacity: 0;
+            visibility: hidden;
+            transition: all 0.3s;
+        }
+        
+        .mobile-menu.show {
+            opacity: 1;
+            visibility: visible;
+        }
+        
+        .mobile-menu ul {
+            flex-direction: column;
+            text-align: center;
+        }
+        
+        .mobile-menu ul li a {
+            color: white;
+            font-size: 22px;
+            padding: 15px 0;
+            display: block;
+        }
+        
+        .mobile-menu-close {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            color: white;
+            font-size: 30px;
+            cursor: pointer;
+        }
+        
+        /* Banner - Simplified */
+        .banner {
+            background-color: var(--primary-color);
+            color: white;
+            text-align: center;
+            padding: 40px 0;
+            margin-bottom: 30px;
+        }
+        
+        .banner h1 {
+            font-size: 32px;
+            margin-bottom: 10px;
+        }
+        
+        /* Breadcrumbs */
+        .breadcrumbs {
+            padding: 10px 0;
+            margin-bottom: 20px;
+            border-bottom: 1px solid var(--border-color);
+        }
+        
+        .breadcrumbs ul {
+            display: flex;
+            list-style: none;
+            gap: 10px;
+            align-items: center;
+        }
+        
+        .breadcrumbs a {
+            color: var(--text-color);
+            text-decoration: none;
+        }
+        
+        .breadcrumbs a:hover {
+            color: var(--primary-color);
+        }
+        
+        .breadcrumbs .divider {
+            color: #999;
+        }
+        
+        .breadcrumbs .current {
+            color: var(--primary-color);
+            font-weight: 600;
+        }
+        
+        /* Table of Contents */
+        .toc {
+            background-color: #ffffff;
+            padding: 20px;
+            border-radius: 8px;
+            margin: 20px 0;
+            box-shadow: var(--box-shadow);
+            border-left: 4px solid var(--primary-color);
+        }
+        
+        .toc-title {
+            font-size: 20px;
+            margin-bottom: 15px;
+            color: var(--primary-color);
+            font-weight: bold;
+            border-bottom: 1px solid var(--border-color);
+            padding-bottom: 10px;
+            display: flex;
+            align-items: center;
+        }
+        
+        .toc-title i {
+            margin-right: 10px;
+        }
+        
+        .toc ul {
+            list-style-type: none;
+        }
+        
+        .toc a {
+            text-decoration: none;
+            color: var(--text-color);
+            transition: color 0.3s;
+            display: block;
+            padding: 4px 0;
+        }
+        
+        .toc a:hover {
+            color: var(--primary-color);
+        }
+        
+        .toc-level-1 {
+            font-weight: bold;
+            margin-top: 10px;
+        }
+        
+        .toc-level-1 i {
+            margin-right: 8px;
+            color: var(--primary-color);
+        }
+        
+        .toc-level-2 {
+            margin-left: 25px;
+            font-size: 15px;
+        }
+        
+        .toc-level-2 i {
+            margin-right: 8px;
+            font-size: 12px;
+            color: var(--secondary-color);
+        }
+        
+        .toc-level-3 {
+            margin-left: 40px;
+            font-size: 14px;
+        }
+        
+        /* Content Sections */
+        h2 {
+            font-size: 24px;
+            margin: 30px 0 15px;
+            padding-bottom: 10px;
+            border-bottom: 2px solid var(--primary-color);
+            color: var(--primary-color);
+            display: flex;
+            align-items: center;
+        }
+        
+        h2 i {
+            margin-right: 12px;
+        }
+        
+        h3 {
+            font-size: 20px;
+            margin: 25px 0 15px;
+            color: var(--primary-color);
+            display: flex;
+            align-items: center;
+        }
+        
+        h3 i {
+            margin-right: 10px;
+        }
+        
+        h4 {
+            font-size: 18px;
+            margin: 20px 0 10px;
+            color: var(--text-color);
+            display: flex;
+            align-items: center;
+        }
+        
+        h4 i {
+            margin-right: 8px;
+            color: var(--secondary-color);
+        }
+        
+        p {
+            margin-bottom: 15px;
+            line-height: 1.7;
+        }
+        
+        ul, ol {
+            margin-left: 25px;
+            margin-bottom: 15px;
+        }
+        
+        li {
+            margin-bottom: 8px;
+        }
+        
+        .section {
+            background: white;
+            padding: 25px;
+            margin: 25px 0;
+            border-radius: 8px;
+            box-shadow: var(--box-shadow);
+        }
+        
+        /* Collapsible section styles */
+        .section h2 {
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .section h2 .toggle-icon {
+            font-size: 20px;
+            transition: transform 0.3s;
+        }
+        
+        .section h2.collapsed .toggle-icon {
+            transform: rotate(180deg);
+        }
+        
+        .section-content {
+            overflow: hidden;
+            transition: max-height 0.4s ease-out;
+            max-height: 5000px; /* Arbitrary large height */
+        }
+        
+        .section-content.collapsed {
+            max-height: 0;
+        }
+        
+        .note {
+            background-color: #FFF3E0; /* Light orange background */
+            border-left: 4px solid var(--accent-color);
+            padding: 15px;
+            margin: 15px 0;
+            border-radius: 4px;
+        }
+        
+        .note-title {
+            font-weight: bold;
+            margin-bottom: 8px;
+            display: flex;
+            align-items: center;
+            color: #E65100;
+        }
+        
+        .note-title i {
+            margin-right: 8px;
+        }
+        
+        .step {
+            margin-bottom: 20px;
+            padding-bottom: 15px;
+            border-bottom: 1px dashed var(--border-color);
+        }
+        
+        .step:last-child {
+            border-bottom: none;
+        }
+        
+        .step-title {
+            font-weight: bold;
+            margin-bottom: 8px;
+            font-size: 16px;
+            color: var(--primary-color);
+            display: flex;
+            align-items: center;
+        }
+        
+        .step-title i {
+            margin-right: 8px;
+            color: var(--primary-color);
+        }
+        
+        /* Back to Top Button - Simplified */
+        .back-to-top {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            background-color: var(--primary-color);
+            color: white;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-decoration: none;
+            box-shadow: 0 3px 10px rgba(0,0,0,0.2);
+            opacity: 0;
+            visibility: hidden;
+            transition: all 0.3s;
+            z-index: 999;
+        }
+        
+        /* Add collapse/expand all button */
+        .toggle-all-sections {
+            display: inline-block;
+            background-color: var(--primary-color);
+            color: white;
+            padding: 8px 15px;
+            margin: 15px 0;
+            border-radius: 4px;
+            text-decoration: none;
+            font-weight: 600;
+            cursor: pointer;
+            border: none;
+            font-size: 14px;
+        }
+        
+        .toggle-all-sections:hover {
+            background-color: var(--secondary-color);
+        }
+        
+        /* Responsive Design */
+        @media (max-width: 991px) {
+            nav ul {
+                gap: 20px;
+            }
+            
+            .section {
+                padding: 20px;
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .header-top .container,
+            .main-header .container {
+                flex-direction: column;
+                gap: 10px;
+            }
+            
+            nav {
+                display: none;
+            }
+            
+            .mobile-menu-btn {
+                display: block;
+                position: absolute;
+                right: 20px;
+                top: 15px;
+            }
+            
+            .mobile-menu {
+                position: fixed;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+                background-color: rgba(0,0,0,0.9);
+                z-index: 1001;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                opacity: 0;
+                visibility: hidden;
+                transition: all 0.3s;
+            }
+            
+            .mobile-menu.show {
+                opacity: 1;
+                visibility: visible;
+            }
+            
+            .mobile-menu ul {
+                flex-direction: column;
+                text-align: center;
+            }
+            
+            .mobile-menu ul li a {
+                color: white;
+                font-size: 20px;
+                padding: 15px 0;
+                display: block;
+            }
+            
+            .mobile-menu-close {
+                position: absolute;
+                top: 20px;
+                right: 20px;
+                color: white;
+                font-size: 30px;
+                cursor: pointer;
+            }
+            
+            .banner {
+                padding: 30px 0;
+            }
+            
+            .banner h1 {
+                font-size: 26px;
+            }
+        }
+        
+        @media (max-width: 576px) {
+            .section {
+                padding: 15px;
+            }
+            
+            h2 {
+                font-size: 22px;
+            }
+            
+            h3 {
+                font-size: 18px;
+            }
+            
+            .toc {
+                padding: 15px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header Section - Enhanced -->
+    <header>
+        <div class="main-header">
+            <div class="container">
+                <a href="index.html" class="logo">
+                    <img src="images/logo.jpg" alt="Co.op Online Logo">
+                </a>
+                <nav>
+                    <ul>
+                        <li><a href="index.html">Trang chủ</a></li>
+                        <li><a href="#">Giới thiệu</a></li>
+                        <li><a href="huongdankh.html" class="active">Hướng dẫn</a></li>
+                        <li><a href="#">Tin tức</a></li>
+                        <li><a href="#">Liên hệ</a></li>
+                    </ul>
+                </nav>
+                <div class="mobile-menu-btn">
+                    <i class="fas fa-bars"></i>
+                </div>
+            </div>
+        </div>
+    </header>
+    
+    <!-- Mobile Menu -->
+    <div class="mobile-menu">
+        <div class="mobile-menu-close">
+            <i class="fas fa-times"></i>
+        </div>
+        <ul>
+            <li><a href="index.html">Trang chủ</a></li>
+            <li><a href="#">Giới thiệu</a></li>
+            <li><a href="huongdankh.html">Hướng dẫn</a></li>
+            <li><a href="#">Tin tức</a></li>
+            <li><a href="#">Liên hệ</a></li>
+        </ul>
+    </div>
+
+    <!-- Banner Section -->
+    <div class="banner">
+        <div class="container">
+            <h1>Hướng Dẫn Khách Hàng</h1>
+            <p>Tìm hiểu cách sử dụng dịch vụ của chúng tôi một cách đầy đủ và hiệu quả</p>
+        </div>
+    </div>
+    
+    <!-- Breadcrumbs -->
+    <div class="breadcrumbs">
+        <div class="container">
+            <ul>
+                <li><a href="index.html">Trang chủ</a></li>
+                <li><span class="divider"><i class="fas fa-chevron-right"></i></span></li>
+                <li><span class="current">Hướng dẫn khách hàng</span></li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="container">
+        <!-- Toggle all sections button -->
+        <button class="toggle-all-sections" id="toggleAllSections">
+            <i class="fas fa-expand-alt"></i> Mở tất cả các mục
+        </button>
+        
+        <!-- MỤC LỤC -->
+        <div class="toc" id="muc-luc">
+            <div class="toc-title"><i class="fas fa-list"></i> MỤC LỤC</div>
+            <ul>
+                <li class="toc-level-1">
+                    <i class="fas fa-sign-in-alt"></i>
+                    <a href="#section-1">I. HƯỚNG DẪN ĐĂNG KÝ – ĐĂNG NHẬP</a>
+                </li>
+                <li class="toc-level-2">
+                    <i class="fas fa-angle-right"></i>
+                    <a href="#section-1-1">1.1. Đăng ký tài khoản bằng SĐT</a>
+                </li>
+                <li class="toc-level-2">
+                    <i class="fas fa-angle-right"></i>
+                    <a href="#section-1-2">1.2 Đăng nhập bằng SĐT</a>
+                </li>
+                <li class="toc-level-2">
+                    <i class="fas fa-angle-right"></i>
+                    <a href="#section-1-3">1.3 Đăng ký/Đăng nhập bằng Social</a>
+                </li>
+                
+                <li class="toc-level-1">
+                    <i class="fas fa-shopping-cart"></i>
+                    <a href="#section-2">II. HƯỚNG DẪN TÌM KIẾM & ĐẶT HÀNG</a>
+                </li>
+                <li class="toc-level-2">
+                    <i class="fas fa-angle-right"></i>
+                    <a href="#section-2-1">2.1 Chọn khu vực giao hàng</a>
+                </li>
+                <li class="toc-level-2">
+                    <i class="fas fa-angle-right"></i>
+                    <a href="#section-2-2">2.2 Tìm kiếm sản phẩm và đặt hàng</a>
+                </li>
+                <li class="toc-level-2">
+                    <i class="fas fa-angle-right"></i>
+                    <a href="#section-2-3">2.3 Tạo đơn hàng và thanh toán</a>
+                </li>
+                <li class="toc-level-2">
+                    <i class="fas fa-angle-right"></i>
+                    <a href="#section-2-5">2.4 Quản lý đơn hàng</a>
+                </li>
+                
+                <li class="toc-level-1">
+                    <i class="fas fa-ticket-alt"></i>
+                    <a href="#section-3">III. HƯỚNG DẪN SỬ DỤNG VÍ VOUCHER</a>
+                </li>
+            </ul>
+        </div>
+
+        <!-- SECTION 1 -->
+        <div class="section" id="section-1">
+            <h2><i class="fas fa-sign-in-alt"></i> I. HƯỚNG DẪN ĐĂNG KÝ – ĐĂNG NHẬP <i class="fas fa-chevron-up toggle-icon"></i></h2>
+            <div class="section-content">
+                <p>
+                    Hướng dẫn người dùng đăng ký/đăng nhập App Co.op Conline dễ dàng tạo tài khoản mới hoặc truy cập vào tài khoản đã có. 
+                    Chỉ cần chọn "Đăng ký" rồi nhập thông tin số điện thoại và mật khẩu, sau đó xác minh qua mã OTP để hoàn tất việc tạo tài khoản.
+                </p>
+                
+                <div id="section-1-1">
+                    <h3><i class="fas fa-user-plus"></i> 1.1. Đăng ký tài khoản bằng SĐT</h3>
+                    <div class="step">
+                        <div class="step-title"><i class="fas fa-arrow-right"></i> Bước 1:</div>
+                        <p>Truy cập App Co.op Online - Vào tab Tài khoản chọn Đăng ký/Đăng nhập.</p>
+                    </div>
+                    <div class="step">
+                        <div class="step-title"><i class="fas fa-arrow-right"></i> Bước 2:</div>
+                        <p>Hệ thống hiển thị màn hình Đăng nhập. Người dùng bấm "Đăng ký ngay" để tạo tài khoản.</p>
+                    </div>
+                    <div class="step">
+                        <div class="step-title"><i class="fas fa-arrow-right"></i> Bước 3:</div>
+                        <p>Nhập vào SĐT và Mật khẩu mong muốn, xác nhận với các điều khoản & điều kiện liên quan đến Bảo mật thông tin cá nhân người dùng.</p>
+                    </div>
+                    
+                    <div class="note">
+                        <div class="note-title"><i class="fas fa-exclamation-circle"></i> Lưu ý:</div>
+                        <ul>
+                            <li>Nếu SĐT đã từng đăng ký rồi, hệ thống sẽ hiển thị thông báo SĐT đã được sử dụng và mở sang giao diện đăng nhập cho người dùng.</li>
+                            <li>Nếu SĐT nhập sai không đúng định dạng, hệ thống sẽ có cảnh báo.</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="step">
+                        <div class="step-title"><i class="fas fa-arrow-right"></i> Bước 4:</div>
+                        <p>Hệ thống xác nhận SĐT thỏa điều kiện và gửi yêu cầu kích hoạt tài khoản. Bấm "Gửi mã kích hoạt" hệ thống sẽ gửi mã OTP về SĐT mà người dùng vừa đăng ký.</p>
+                    </div>
+                    <div class="step">
+                        <div class="step-title"><i class="fas fa-arrow-right"></i> Bước 5:</div>
+                        <p>Người dùng nhập mã xác nhận OTP thành công, hệ thống sẽ chuyển sang màn hình Cập nhật thông tin cá nhân (Người dùng có thể cập nhật ngay hoặc để sau).</p>
+                    </div>
+                    
+                    <div class="note">
+                        <div class="note-title"><i class="fas fa-exclamation-circle"></i> Lưu ý:</div>
+                        <ul>
+                            <li>Trường hợp mất mã OPT người dùng bấm gửi lại mã để nhập lại.</li>
+                            <li>Mỗi ngày người dùng chỉ có thể yêu cầu OTP đăng nhập tối đa 10 lần (Quá 10 lần sẽ bị khoá tài khoản)</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div id="section-1-2">
+                    <h3><i class="fas fa-sign-in-alt"></i> 1.2 Đăng nhập bằng SĐT</h3>
+                    <div class="step">
+                        <div class="step-title"><i class="fas fa-arrow-right"></i> Bước 1:</div>
+                        <p>Mở App Co.op Online vào Tab Tài khoản chọn Đăng ký/Đăng nhập.</p>
+                    </div>
+                    <div class="step">
+                        <div class="step-title"><i class="fas fa-arrow-right"></i> Bước 2:</div>
+                        <p>Người dùng nhập thông tin SĐT, xác nhận các điều khoản/điều kiện của hệ thống và nhập mật khẩu để đăng nhập.</p>
+                    </div>
+                    <div class="step">
+                        <div class="step-title"><i class="fas fa-arrow-right"></i> Bước 3:</div>
+                        <p>Đăng nhập thành công hệ thống chuyển sang màn hình trang chủ App</p>
+                    </div>
+                </div>
+                
+                <div id="section-1-3">
+                    <h3><i class="fas fa-share-alt"></i> 1.3 Đăng ký/Đăng nhập bằng Social</h3>
+                    <div class="step">
+                        <div class="step-title"><i class="fas fa-arrow-right"></i> Bước 1:</div>
+                        <p>Truy cập vào App Co.op Online, từ Tab Tài khoản lựa chọn Đăng ký/Đăng nhập, Hệ thống hiển thị màn hình Đăng nhập.</p>
+                    </div>
+                    <div class="step">
+                        <div class="step-title"><i class="fas fa-arrow-right"></i> Bước 2:</div>
+                        <p>Khách hàng lựa chọn đăng nhập bằng các hình thức Social (Facebook, Google) và xác nhận với các điều khoản.</p>
+                    </div>
+                    <div class="step">
+                        <div class="step-title"><i class="fas fa-arrow-right"></i> Bước 3:</div>
+                        <p>Hệ thống yêu cầu nhập SĐT liên kết và xác nhận mã OTP.</p>
+                    </div>
+                    <div class="step">
+                        <div class="step-title"><i class="fas fa-arrow-right"></i> Bước 4:</div>
+                        <p>Sau khi liên kết thành công, hệ thống hiển thị màn hình Cập nhật thông tin cá nhân và chuyển tới trang chủ App.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- SECTION 2 -->
+        <div class="section" id="section-2">
+            <h2><i class="fas fa-shopping-cart"></i> II. HƯỚNG DẪN TÌM KIẾM & ĐẶT HÀNG <i class="fas fa-chevron-up toggle-icon"></i></h2>
+            <div class="section-content">
+                <p>
+                    Để mua sắm nhanh chóng, khách hàng vui lòng chọn khu vực giao hàng gần nhất ngay khi truy cập website để hiển thị chính xác sản phẩm còn hàng và giá bán. 
+                    Sau đó, sử dụng thanh tìm kiếm hoặc chọn danh mục sản phẩm để tìm sản phẩm mong muốn, nhấp vào sản phẩm để xem thông tin chi tiết.
+                </p>
+                
+                <div id="section-2-1">
+                    <h3><i class="fas fa-map-marker-alt"></i> 2.1 Chọn khu vực giao hàng</h3>
+                    <div class="step">
+                        <div class="step-title"><i class="fas fa-arrow-right"></i> Bước 1:</div>
+                        <p>Bấm vào icon địa chỉ để chọn khu vực giao hàng ở trên cùng bên phải App.</p>
+                    </div>
+                    <div class="step">
+                        <div class="step-title"><i class="fas fa-arrow-right"></i> Bước 2:</div>
+                        <p>Chọn Tỉnh/Thành phố - Quận/Huyện - Phường/Xã</p>
+                    </div>
+                    
+                    <div class="note">
+                        <div class="note-title"><i class="fas fa-exclamation-circle"></i> Lưu ý:</div>
+                        <ul>
+                            <li>Lần đăng nhập đầu tiên, hệ thống sẽ yêu cầu người dùng chọn khu vực giao hàng đầu tiên</li>
+                            <li>Các lần đăng nhập sau, hệ thống sẽ tự động lưu khu vực giao hàng mà người dùng đã chọn trước đó</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div id="section-2-2">
+                    <h3><i class="fas fa-search"></i> 2.2 Tìm kiếm sản phẩm và đặt hàng</h3>
+                    <div class="step">
+                        <div class="step-title"><i class="fas fa-arrow-right"></i> Bước 1:</div>
+                        <p>Người dùng truy cập App Co.op Online và xem các sản phẩm được bày bán trên trang chủ (Các sản phẩm bán chạy, Sản phẩm đang khuyến mãi,...) hoặc chọn Tab "Danh mục" để xem các nhóm ngành sản phẩm.</p>
+                    </div>
+                    
+                    <div class="step">
+                        <div class="step-title"><i class="fas fa-arrow-right"></i> Bước 2:</div>
+                        <p>Khách hàng bấm vào sản phẩm để xem chi tiết. Sau khi đã lựa chọn được sản phẩm mình ưng ý, người dùng bấm nút "Thêm vào giỏ hàng" để bỏ các sản phẩm cần mua vào giỏ hàng.</p>
+                    </div>
+                    
+                    <div class="step">
+                        <div class="step-title"><i class="fas fa-arrow-right"></i> Bước 3:</div>
+                        <p>Xem lại danh sách các sản phẩm đã thêm vào giỏ hàng. Người dùng có thể chỉnh sửa lại số lượng và ghi chú cho từng sản phẩm của mình.</p>
+                    </div>
+                </div>
+                
+                <div id="section-2-3">
+                    <h3><i class="fas fa-shopping-basket"></i> 2.3 Tạo đơn hàng và thanh toán</h3>
+                    <div class="step">
+                        <div class="step-title"><i class="fas fa-arrow-right"></i> Bước 1:</div>
+                        <p>Màn hình giỏ hàng có chức năng để người dùng xem danh sách các CTKM, E-voucher, PMH để lựa chọn áp vào đơn hàng của mình.</p>
+                    </div>
+                    
+                    <div class="step">
+                        <div class="step-title"><i class="fas fa-arrow-right"></i> Bước 2:</div>
+                        <p>Khách hàng tuỳ chọn 2 hình thức nhận hàng:</p>
+                        <ul>
+                            <li>
+                                <strong>Nhận tại nhà:</strong> Hệ thống sẽ tự động điền địa chỉ mặc định hoặc chọn địa chỉ khác trong Sổ địa chỉ.
+                            </li>
+                            <li>
+                                <strong>Nhận tại siêu thị:</strong> Chọn siêu thị và thời gian đến nhận hàng (tối thiểu 3 tiếng từ lúc đặt).
+                            </li>
+                        </ul>
+                    </div>
+                    
+                    <div class="step">
+                        <div class="step-title"><i class="fas fa-arrow-right"></i> Bước 3:</div>
+                        <p>Người dùng tiến hành chọn phương thức giao hàng và phương thức thanh toán.</p>
+                    </div>
+                </div>
+                
+                <div id="section-2-5">
+                    <h3><i class="fas fa-shopping-basket"></i> 2.4 Quản lý đơn hàng</h3>
+                    
+                    <div id="section-2-5-1">
+                        <h4><i class="fas fa-list"></i> Xem danh sách đơn hàng</h4>
+                        <p>Khách hàng xem được danh sách đơn hàng theo các trạng thái: Chờ thanh toán, Chờ giao hàng, Đã hoàn thành, Đã hủy.</p>
+                    </div>
+                    
+                    <div id="section-2-5-2">
+                        <h4><i class="fas fa-info-circle"></i> Xem chi tiết đơn hàng</h4>
+                        <p>Khách hàng "click" vào đơn hàng để xem chi tiết đơn, bao gồm thông tin người nhận, trạng thái đơn, sản phẩm trong đơn, khuyến mãi, và thông tin thanh toán.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- SECTION 3 -->
+        <div class="section" id="section-3">
+            <h2><i class="fas fa-ticket-alt"></i> III. HƯỚNG DẪN SỬ DỤNG VÍ VOUCHER <i class="fas fa-chevron-up toggle-icon"></i></h2>
+            <div class="section-content">
+                <p>
+                    Truy cập Ví Voucher sẽ hiển thị danh sách các Mã giảm giá, Phiếu mua hàng khách hàng có thể sử dụng để mua hàng. 
+                    Bên cạnh đó, khách hàng sẽ có tính năng để quy đổi Phiếu mua hàng của Urbox, Gotit, Giftee,... sang phiếu mua hàng của Co.op Online.
+                </p>
+                <ul>
+                    <li>
+                        <strong>Truy cập tab Mã giảm giá:</strong> Copy mã giảm giá để sử dụng khi thanh toán hoặc chọn Mua hàng để mở danh sách sản phẩm áp dụng.
+                    </li>
+                    <li>
+                        <strong>Truy cập Tab đổi Voucher:</strong> Đổi điểm lấy voucher hoặc đổi voucher đối tác thành voucher Co.op Online.
+                    </li>
+                </ul>
+            </div>
+        </div>
+        
+        <a href="#muc-luc" class="back-to-top">
+            <i class="fas fa-arrow-up"></i>
+        </a>
+    </div>
+
+    <!-- JavaScript -->
+    <script>
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+        
+        // Mobile menu toggle
+        const mobileMenuBtn = document.querySelector('.mobile-menu-btn');
+        const mobileMenu = document.querySelector('.mobile-menu');
+        const mobileMenuClose = document.querySelector('.mobile-menu-close');
+        
+        if (mobileMenuBtn) {
+            mobileMenuBtn.addEventListener('click', () => {
+                mobileMenu.classList.add('show');
+            });
+        }
+        
+        if (mobileMenuClose) {
+            mobileMenuClose.addEventListener('click', () => {
+                mobileMenu.classList.remove('show');
+            });
+        }
+        
+        // Back to top button
+        const backToTopButton = document.querySelector('.back-to-top');
+        
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 300) {
+                backToTopButton.classList.add('show');
+            } else {
+                backToTopButton.classList.remove('show');
+            }
+        });
+        
+        // Toggle section functionality
+        document.addEventListener('DOMContentLoaded', function() {
+            // Function to toggle a section
+            function toggleSection(section) {
+                const heading = section.querySelector('h2');
+                const content = section.querySelector('.section-content');
+                
+                if (heading.classList.contains('collapsed')) {
+                    // Open section
+                    heading.classList.remove('collapsed');
+                    content.classList.remove('collapsed');
+                } else {
+                    // Close section
+                    heading.classList.add('collapsed');
+                    content.classList.add('collapsed');
+                }
+            }
+            
+            // Add click event to all section headings
+            const sections = document.querySelectorAll('.section');
+            sections.forEach(section => {
+                const heading = section.querySelector('h2');
+                heading.addEventListener('click', () => {
+                    toggleSection(section);
+                });
+            });
+            
+            // Toggle all sections button
+            const toggleAllBtn = document.getElementById('toggleAllSections');
+            if (toggleAllBtn) {
+                toggleAllBtn.addEventListener('click', () => {
+                    const allSectionsCollapsed = document.querySelectorAll('.section h2.collapsed').length === sections.length;
+                    
+                    sections.forEach(section => {
+                        const heading = section.querySelector('h2');
+                        const content = section.querySelector('.section-content');
+                        
+                        if (allSectionsCollapsed) {
+                            // Open all sections
+                            heading.classList.remove('collapsed');
+                            content.classList.remove('collapsed');
+                            toggleAllBtn.innerHTML = '<i class="fas fa-compress-alt"></i> Đóng tất cả các mục';
+                        } else {
+                            // Close all sections
+                            heading.classList.add('collapsed');
+                            content.classList.add('collapsed');
+                            toggleAllBtn.innerHTML = '<i class="fas fa-expand-alt"></i> Mở tất cả các mục';
+                        }
+                    });
+                });
+            }
+            
+            // Initialize sections (all open by default)
+            sections.forEach(section => {
+                const heading = section.querySelector('h2');
+                const content = section.querySelector('.section-content');
+                
+                // Initially sections are open
+                heading.classList.remove('collapsed');
+                content.classList.remove('collapsed');
+            });
+        });
+    </script>
+</body>
+</html> 
